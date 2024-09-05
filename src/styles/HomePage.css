@@ -1,0 +1,104 @@
+.homepage-container {
+    text-align: center;
+    padding: 50px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../assets/images/bg2.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.homepage-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--overlay-color);
+    backdrop-filter: blur(8px);
+    z-index: 1;
+}
+
+.welcome-section {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+.welcome-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--heading-color);
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-section p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: var(--secondary-text-color);
+}
+
+.add-birthday-button {
+    padding: 15px 30px;
+    background-color: var(--button-bg);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-birthday-button:hover {
+    background-color: var(--button-hover-bg);
+    transform: scale(1.05);
+}
+
+.birthday-list {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 600px;
+    background-color: var(--list-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+.birthday-list h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--heading-color2);
+}
+
+.birthday-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.birthday-list li {
+    background-color: var(--list-item-bg);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease;
+}
+
+.birthday-list li:hover {
+    background-color: var(--list-item-hover-bg);
+}

@@ -1,0 +1,73 @@
+:root {
+  /* Font */
+  --font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  /* Colors */
+  --primary-color: #646cff;
+  --primary-hover: #535bf2;
+  --react-color: #61dafb;
+  --background-color: #242424;
+  --text-color: #000000;
+  --heading-color: antiquewhite;
+  --heading-color2: #2e87a5;
+  --secondary-text-color: #f1f1f1;
+  --button-bg: #ca2459;
+  --button-hover-bg: bisque;
+  --button-text-color: #ffffff;
+  --overlay-color: rgba(36, 36, 36, 0.3);
+  --list-bg: rgba(255, 255, 255, 0.8);
+  --list-item-bg: #f9f9f9;
+  --list-item-hover-bg: #ecf0f1;
+  --text-muted: #888;
+
+  /* Font settings */
+  --font-synthesis: none;
+  --font-smoothing: antialiased;
+  --font-weight: 400;
+  --font-size: 1rem;
+  --line-height: 1.5;
+}
+
+
+a {
+  font-weight: 500;
+  color: var(--primary-color);
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: var(--primary-color);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}

@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { loadBirthdays } from '../utils/birthdayStorage';
 
 const BirthdayList = () => {
-    const birthdays = [
-        { id: 1, name: 'Ali', date: 'September 20, 2024' },
-        { id: 2, name: 'Reza', date: 'October 5, 2024' },
-    ];
+    const [birthdays, setBirthdays] = useState([]);
+
+    useEffect(() => {
+        const loadedBirthdays = loadBirthdays();
+        setBirthdays(loadedBirthdays);
+    }, []);
 
     return (
         <div className="birthday-list">

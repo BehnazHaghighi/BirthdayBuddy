@@ -1,4 +1,3 @@
-// Load birthdays from localStorage
 export const loadBirthdays = () => {
     const savedBirthdays = localStorage.getItem('birthdays');
     return savedBirthdays ? JSON.parse(savedBirthdays) : [];

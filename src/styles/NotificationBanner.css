@@ -1,0 +1,26 @@
+.notification-banner {
+    background-color: #f39c12;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .enable-notifications-button {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+  
+  .enable-notifications-button:hover {
+    background-color: #2ecc71;
+  }
+  

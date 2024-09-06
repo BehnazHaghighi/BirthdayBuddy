@@ -1,6 +1,5 @@
 .homepage-container {
     text-align: center;
-    padding: 50px 20px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -11,6 +10,7 @@
     background-position: center;
     position: relative;
     overflow: hidden;
+    padding: 100px 20px 50px;
 }
 
 .homepage-container::before {
@@ -163,4 +163,14 @@
 
 .cancel-button:hover {
     background-color: var(--button-muted-hover-bg);
+}
+
+.birthday-notification {
+    background-color: var(--overlay-color);
+    color: var(--text-color);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1rem;
+    margin: 10px 0;
 }

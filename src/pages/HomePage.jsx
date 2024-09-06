@@ -4,7 +4,7 @@ import BirthdayList from '../components/BirthdayList';
 import BirthdayReminder from '../components/BirthdayReminder';
 import '../styles/HomePage.css';
 
-const HomePage = () => {
+const HomePage = ({ birthdays, reloadBirthdays }) => { 
   return (
     <div className="homepage-container">
       <BirthdayReminder /> 
@@ -13,7 +13,7 @@ const HomePage = () => {
         <p>Never forget your loved ones' birthdays again!</p>
         <AddBirthdayButton />
       </div>
-      <BirthdayList />
+      <BirthdayList birthdays={birthdays} reloadBirthdays={reloadBirthdays} /> {/* Pass birthdays and reload function */}
     </div>
   );
 };

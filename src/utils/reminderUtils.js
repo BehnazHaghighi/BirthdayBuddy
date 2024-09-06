@@ -11,19 +11,22 @@ export const getUpcomingReminders = (birthdays) => {
 
         let reminderText = '';
 
-        if (birthday.reminder === '1-day' && daysUntilBirthday === 1) {
+        // Check for 1-day and up to 7-day reminders
+        if (daysUntilBirthday === 1 && (!birthday.reminder || birthday.reminder === '1-day')) {
             reminderText = '1 day away';
-        } else if (birthday.reminder === '1-week' && daysUntilBirthday === 7) {
-            reminderText = '1 week away';
+        } else if (daysUntilBirthday <= 7 && (!birthday.reminder || birthday.reminder === '1-week')) {
+            reminderText = `${daysUntilBirthday} days away`;
         }
 
         if (reminderText) {
             upcomingReminders.push({
                 ...birthday,
                 reminderText,
+                daysUntilBirthday, // sort reminders by days until birthday
             });
         }
     });
 
-    return upcomingReminders;
+    // Sort reminders by the nearest birthday first
+    return upcomingReminders.sort((a, b) => a.daysUntilBirthday - b.daysUntilBirthday);
 };

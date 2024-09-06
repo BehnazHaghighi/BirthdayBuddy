@@ -1,18 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { loadBirthdays, removeBirthday } from '../utils/birthdayStorage';
+import React from 'react';
+import { removeBirthday } from '../utils/birthdayStorage';
+import { isToday, parseISO } from 'date-fns';
 
-const BirthdayList = () => {
-    const [birthdays, setBirthdays] = useState([]);
-
-    useEffect(() => {
-        const loadedBirthdays = loadBirthdays();
-        setBirthdays(loadedBirthdays);
-    }, []);
-
+const BirthdayList = ({ birthdays, reloadBirthdays }) => {
     const handleDelete = (id) => {
         removeBirthday(id); // Remove birthday from localStorage
-        const updatedBirthdays = loadBirthdays(); // Reload birthdays
-        setBirthdays(updatedBirthdays); // Update the state
+        reloadBirthdays();  // Reload and sort the birthday list
     };
 
     return (
@@ -20,17 +13,27 @@ const BirthdayList = () => {
             <h2>Upcoming Birthdays</h2>
             <ul>
                 {birthdays.length > 0 ? (
-                    birthdays.map((birthday) => (
-                        <li key={birthday.id}>
-                            <span>{birthday.name} - {birthday.date}</span>
-                            <button
-                                className="delete-birthday-button"
-                                onClick={() => handleDelete(birthday.id)}
+                    birthdays.map((birthday) => {
+                        const birthdayDate = parseISO(birthday.date);
+                        const isBirthdayToday = isToday(birthdayDate); // Check if birthday is today
+
+                        return (
+                            <li
+                                key={birthday.id}
+                                style={{
+                                    backgroundColor: isBirthdayToday ? 'var(--bisque-color)' : 'var(--list-item-bg)',
+                                }}
                             >
-                                Remove
-                            </button>
-                        </li>
-                    ))
+                                <span>{birthday.name} - {birthdayDate.toLocaleDateString()}</span>
+                                <button
+                                    className="delete-birthday-button"
+                                    onClick={() => handleDelete(birthday.id)}
+                                >
+                                    Remove
+                                </button>
+                            </li>
+                        );
+                    })
                 ) : (
                     <li>No upcoming birthdays</li>
                 )}

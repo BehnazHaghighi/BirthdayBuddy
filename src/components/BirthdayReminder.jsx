@@ -7,9 +7,7 @@ const BirthdayReminder = () => {
 
     useEffect(() => {
         const birthdays = loadBirthdays();
-        console.log(birthdays);
         const upcomingReminders = getUpcomingReminders(birthdays);
-        console.log(upcomingReminders);
         setReminders(upcomingReminders);
     }, []);
 
@@ -21,7 +19,7 @@ const BirthdayReminder = () => {
                     <ul>
                         {reminders.map((reminder) => (
                             <li key={reminder.id}>
-                                {reminder.name}'s birthday is coming up on {reminder.date}!
+                                {reminder.name}'s birthday is coming up on {new Date(reminder.date).toLocaleDateString()}!
                                 ({reminder.reminderText})
                             </li>
                         ))}

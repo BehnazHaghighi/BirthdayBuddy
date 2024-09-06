@@ -65,7 +65,7 @@
 
 .birthday-list {
     margin-top: 40px;
-    width: 100%;
+    width: 98%;
     max-width: 600px;
     background-color: var(--list-bg);
     padding: 20px;
@@ -101,4 +101,36 @@
 
 .birthday-list li:hover {
     background-color: var(--list-item-hover-bg);
+}
+
+.birthday-reminder {
+    margin-bottom: 20px;
+    z-index: 1000;
+ 
+}
+
+.reminder-list {
+    background: var(--list-bg);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reminder-list h2 {
+    color: var(--heading-color3);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.reminder-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.reminder-list li {
+    background-color: #fff;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

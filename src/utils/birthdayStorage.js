@@ -10,3 +10,10 @@ export const saveBirthday = (newBirthday) => {
     const updatedBirthdays = [...currentBirthdays, newBirthday];
     localStorage.setItem('birthdays', JSON.stringify(updatedBirthdays));
 };
+
+// Remove a birthday by id
+export const removeBirthday = (id) => {
+    const currentBirthdays = loadBirthdays();
+    const updatedBirthdays = currentBirthdays.filter((birthday) => birthday.id !== id);
+    localStorage.setItem('birthdays', JSON.stringify(updatedBirthdays));
+};

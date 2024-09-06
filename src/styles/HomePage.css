@@ -106,7 +106,7 @@
 .birthday-reminder {
     margin-bottom: 20px;
     z-index: 1000;
- 
+
 }
 
 .reminder-list {
@@ -133,4 +133,34 @@
     margin: 5px 0;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.delete-birthday-button {
+    padding: 5px 10px;
+    background-color: var(--button-delete-bg);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-birthday-button:hover {
+    background-color: var(--button-delete-hover-bg);
+}
+
+.cancel-button {
+    padding: 10px 20px;
+    background-color: var(--button-muted-bg);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cancel-button:hover {
+    background-color: var(--button-muted-hover-bg);
 }

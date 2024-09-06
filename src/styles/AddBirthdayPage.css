@@ -21,14 +21,14 @@ input[type="text"],
 input[type="date"] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--overlay-color);
     border-radius: 5px;
 }
 
 .save-button {
     padding: 10px 20px;
-    background-color: #ca2459;
-    color: white;
+    background-color: var(--button-bg);
+    color: var(--button-text-color);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -36,5 +36,33 @@ input[type="date"] {
 }
 
 .save-button:hover {
-    background-color: bisque;
+    background-color: var(--button-hover-bg);
+}
+
+.form-group label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: var(--secondary-text-color);
+}
+
+#reminder {
+    width: 105%;
+    padding: 10px;
+    border: 1px solid var(--overlay-color);
+    border-radius: 5px;
+    background-color: var(--list-item-bg);
+    color: var(--text-muted);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+#reminder:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    background-color: var(--secondary-text-color);
+}
+
+#reminder:hover {
+    border-color: var(--primary-hover);
 }

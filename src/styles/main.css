@@ -13,7 +13,11 @@
   --heading-color3: darkturquoise;
   --secondary-text-color: #f1f1f1;
   --button-bg: #ca2459;
+  --button-delete-bg: #e74c3c;
+  --button-muted-bg: #7f8c8d;
   --button-hover-bg: bisque;
+  --button-delete-hover-bg: #c0392b;
+  --button-muted-hover-bg: #95a5a6;
   --button-text-color: #ffffff;
   --overlay-color: rgba(36, 36, 36, 0.3);
   --list-bg: rgba(255, 255, 255, 0.8);
@@ -59,7 +63,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--background-color);
   cursor: pointer;
   transition: border-color 0.25s;
 }

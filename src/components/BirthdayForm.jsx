@@ -23,6 +23,10 @@ const BirthdayForm = ({ onAddBirthday }) => {
         navigate('/'); // Redirect back to the homepage
     };
 
+    const handleCancel = () => {
+        navigate('/'); // Return to the homepage
+    };
+
     return (
         <form className="birthday-form" onSubmit={handleSubmit}>
             <div className="form-group">
@@ -59,7 +63,12 @@ const BirthdayForm = ({ onAddBirthday }) => {
                 </select>
             </div>
 
-            <button type="submit" className="save-button">Save</button>
+            <div className="form-actions">
+                <button type="submit" className="save-button">Save</button>
+                <button type="button" className="cancel-button" onClick={handleCancel}>
+                    Cancel
+                </button>
+            </div>
         </form>
     );
 };
